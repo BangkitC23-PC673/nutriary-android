@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/trackerFragment"
+        android:icon="@drawable/ic_diary"
+        android:title="My Nutrition and Calorie" />
+    <item
+        android:id="@+id/calculatorFragment"
+        android:icon="@drawable/ic_calculate"
+        android:title="BMR Calculator" />
+    <item
+        android:id="@+id/nutrientFragment"
+        android:icon="@drawable/ic_calories"
+        android:title="Daily Total Nutrition" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
+    <item
+        android:id="@+id/aboutFragment2"
+        android:icon="@drawable/ic_error"
+        android:title="About" />
+
+</menu>

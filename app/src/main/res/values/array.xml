@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="themes_entries">
+        <item>Dark</item>
+        <item>Light</item>
+        <item>System default</item>
+    </string-array>
+    <string-array name="themes_values">
+        <item>@string/dark_theme_preference_value</item>
+        <item>@string/light_theme_preference_value</item>
+        <item>@string/system_theme_preference_value</item>
+    </string-array>
+
+    <string-array name="default_nutrients">
+        <item>Calories</item>
+        <item>Sugar</item>
+        <item>Fiber</item>
+        <item>Total Carbs</item>
+        <item>Saturated Fat</item>
+        <item>Total Fat</item>
+        <item>Protein</item>
+        <item>Sodium</item>
+        <item>Potassium</item>
+        <item>Cholesterol</item>
+    </string-array>
+
+    <array name="goals">
+        <item>Select</item>
+        <item>I want to loose weight</item>
+        <item>I want to keep weight</item>
+        <item>I want to gain weight</item>
+    </array>
+
+    <array name="genders">
+        <item>Select</item>
+        <item>Male</item>
+        <item>Female</item>
+    </array>
+
+    <array name="activity_level">
+        <item>Select</item>
+        <item>Little/No exercise</item>
+        <item>Light exercise</item>
+        <item>Moderate exercise (3-5 days/week)</item>
+        <item>Very active (6-7 days/week)</item>
+        <item>Extra active (very active and physical job)</item>
+    </array>
+
+</resources>
