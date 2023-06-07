@@ -1,4 +1,4 @@
-![image](https://github.com/BangkitC23-PC673/nutriary-android/assets/60954620/f86dc34c-8b69-4c6b-9e3b-27c74a5e02ab)
+![Group 1](https://github.com/BangkitC23-PC673/nutriary-android/assets/60954620/2651b879-edcd-4339-8c4a-65b56a647e7a)
 
 # Nutriary
 Daily Nutrition and Calorie Diary Android App 
