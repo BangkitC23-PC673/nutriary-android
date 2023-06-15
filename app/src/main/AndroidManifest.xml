@@ -13,9 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nutriary">
         <activity
+            android:name=".imagesearch.ImageSearchActivity"
+            android:exported="false" />
+        <activity
             android:name="com.syukron.nutriary.ui.onboarding.OnBoardingActivity"
             android:exported="false" />
-
         <activity
             android:name="com.syukron.nutriary.SplashActivity"
             android:exported="true">
@@ -25,11 +27,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.syukron.nutriary.MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.ukonkeren.nutriary.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
     </application>
 
 </manifest>

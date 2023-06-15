@@ -14,20 +14,18 @@
 
     <string-array name="default_nutrients">
         <item>Calories</item>
-        <item>Sugar</item>
-        <item>Fiber</item>
-        <item>Total Carbs</item>
-        <item>Saturated Fat</item>
-        <item>Total Fat</item>
         <item>Protein</item>
-        <item>Sodium</item>
-        <item>Potassium</item>
-        <item>Cholesterol</item>
+        <item>Total Fat</item>
+        <item>Total Carbs</item>
+        <item>Fiber</item>
+        <item>Calcium</item>
+        <item>Iron</item>
+        <item>Natrium</item>
     </string-array>
 
     <array name="goals">
         <item>Select</item>
-        <item>I want to loose weight</item>
+        <item>I want to lose weight</item>
         <item>I want to keep weight</item>
         <item>I want to gain weight</item>
     </array>

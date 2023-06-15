@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.syukron.nutriary.data.model.Food
 
-@Database(entities = [Food::class], version = 24, exportSchema = false)
+@Database(entities = [Food::class], version = 26, exportSchema = false)
 abstract class FoodDatabase : RoomDatabase() {
     abstract val foodDao: FoodDao
 

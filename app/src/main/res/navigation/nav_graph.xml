@@ -57,6 +57,9 @@
         <action
             android:id="@+id/action_searchFragment_to_foodFragment"
             app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
     </fragment>
     <fragment
         android:id="@+id/nutrientFragment"
@@ -103,5 +106,17 @@
             app:destination="@id/trackerFragment"
             app:popUpTo="@id/trackerFragment"
             app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.syukron.nutriary.ui.fragment.CameraFragment"
+        android:label="@string/image_search"
+        tools:layout="@layout/fragment_camera">
+        <action
+            android:id="@+id/action_cameraFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_cameraFragment_to_trackerFragment"
+            app:destination="@id/trackerFragment" />
     </fragment>
 </navigation>

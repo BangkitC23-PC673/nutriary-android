@@ -33,6 +33,8 @@ class TrackerViewModel(application: Application) :
 
     var modType = ModType.EDIT
 
+    val predictionResult = MutableLiveData<String>()
+
     val calories = _repository.getKcalSum()
     val caloriesGoal = MutableLiveData(_repository.getSavedGoalFromPreferences(0))
     val caloriesRemaining = createRemainingCalories()

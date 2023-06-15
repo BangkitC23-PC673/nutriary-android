@@ -10,7 +10,7 @@ enum class ListType { BREAKFAST, LUNCH, DINNER, SNACKS, HISTORY }
 
 typealias Nutrient = Pair<String, Double>
 
-data class FoodList(val items: List<Food>)
+data class FoodList(val data: List<Food>)
 
 @Entity(tableName = "saved_foods_table")
 data class Food(
@@ -22,79 +22,79 @@ data class Food(
     @ColumnInfo(name = "list_type")
     var listType: Int = ListType.BREAKFAST.ordinal,
 
-    @ColumnInfo(name = "name")
+    @ColumnInfo(name = "kode")
+    @Json(name = "kode")
+    val kode: String = "",
+
+    @ColumnInfo(name = "nama_bahan_makanan")
+    @Json(name = "nama_bahan_makanan")
     val name: String = "",
 
     /* Food Nutrients */
-    @ColumnInfo(name = "serving_size")
-    @Json(name = "serving_size_g")
-    var servingSize: String = "0.0",
-
-    @ColumnInfo(name = "calories")
+    @ColumnInfo(name = "energi_kal")
+    @Json(name = "energi_kal")
     var calories: String = "0.0",
 
-    @ColumnInfo(name = "sugar")
-    @Json(name = "sugar_g")
-    var sugar: String = "0.0",
+//    @ColumnInfo(name = "calories")
+//    var calories: String = "0.0",
 
-    @ColumnInfo(name = "fiber")
-    @Json(name = "fiber_g")
-    var fiber: String = "0.0",
-
-    @ColumnInfo(name = "carbs")
-    @Json(name = "carbohydrates_total_g")
-    var totalCarbs: String = "0.0",
-
-    @ColumnInfo(name = "saturated_fat")
-    @Json(name = "fat_saturated_g")
-    var saturatedFat: String = "0.0",
-
-    @ColumnInfo(name = "fat")
-    @Json(name = "fat_total_g")
-    var totalFat: String = "0.0",
-
-    @ColumnInfo(name = "protein")
+    @ColumnInfo(name = "protein_g")
     @Json(name = "protein_g")
     var protein: String = "0.0",
 
-    @ColumnInfo(name = "sodium")
-    @Json(name = "sodium_mg")
-    var sodium: String = "0.0",
+    @ColumnInfo(name = "lemak_g")
+    @Json(name = "lemak_g")
+    var lemak: String = "0.0",
 
-    @ColumnInfo(name = "potassium")
-    @Json(name = "potassium_mg")
-    var potassium: String = "0.0",
+    @ColumnInfo(name = "karbohidrat_g")
+    @Json(name = "karbohidrat_g")
+    var karbohidrat: String = "0.0",
 
-    @ColumnInfo(name = "cholesterol")
-    @Json(name = "cholesterol_mg")
-    var cholesterol: String = "0.0",
+    @ColumnInfo(name = "serat_g")
+    @Json(name = "serat_g")
+    var serat: String = "0.0",
+
+    @ColumnInfo(name = "kalsium_mg")
+    @Json(name = "kalsium_mg")
+    var kalsium: String = "0.0",
+
+    @ColumnInfo(name = "besi_mg")
+    @Json(name = "besi_mg")
+    var besi: String = "0.0",
+
+    @ColumnInfo(name = "natrium_mg")
+    @Json(name = "natrium_mg")
+    var natrium: String = "0.0",
+
+    @ColumnInfo(name = "serving_size")
+    @Json(name = "serving_size_g")
+    var servingSize: String = "0.0"
+
 ) {
     @Override
     operator fun plus(food: Food) =
         Food(
             calories = (this.calories.toDouble() + food.calories.toDouble()).toString(),
-            fiber = (this.fiber.toDouble() + food.fiber.toDouble()).toString(),
-            sugar = (this.sugar.toDouble() + food.sugar.toDouble()).toString(),
-            totalCarbs = (this.totalCarbs.toDouble() + food.totalCarbs.toDouble()).toString(),
-            saturatedFat = (this.saturatedFat.toDouble() + food.saturatedFat.toDouble()).toString(),
-            totalFat = (this.totalFat.toDouble() + food.totalFat.toDouble()).toString(),
             protein = (this.protein.toDouble() + food.protein.toDouble()).toString(),
-            sodium = (this.sodium.toDouble() + food.sodium.toDouble()).toString(),
-            potassium = (this.potassium.toDouble() + food.potassium.toDouble()).toString(),
-            cholesterol = (this.cholesterol.toDouble() + food.cholesterol.toDouble()).toString(),
+            lemak = (this.lemak.toDouble() + food.lemak.toDouble()).toString(),
+            karbohidrat = (this.karbohidrat.toDouble() + food.karbohidrat.toDouble()).toString(),
+            serat = (this.serat.toDouble() + food.serat.toDouble()).toString(),
+            kalsium = (this.kalsium.toDouble() + food.kalsium.toDouble()).toString(),
+            besi = (this.besi.toDouble() + food.besi.toDouble()).toString(),
+            natrium = (this.natrium.toDouble() + food.natrium.toDouble()).toString()
+
         )
 
     fun getNutrients() = listOf(
         calories.toDouble(),
-        sugar.toDouble(),
-        fiber.toDouble(),
-        totalCarbs.toDouble(),
-        saturatedFat.toDouble(),
-        totalFat.toDouble(),
         protein.toDouble(),
-        sodium.toDouble(),
-        potassium.toDouble(),
-        cholesterol.toDouble()
+        lemak.toDouble(),
+        karbohidrat.toDouble(),
+        serat.toDouble(),
+        kalsium.toDouble(),
+        besi.toDouble(),
+        natrium.toDouble()
+
     )
 
     fun edit(newServingSize: Double, newListType: ListType? = null):
@@ -103,15 +103,13 @@ data class Food(
         val ratio = newServingSize / servingSize.toDouble()
         servingSize = (servingSize.toDouble() * ratio).toString()
         calories = (calories.toDouble() * ratio).toString()
-        sugar = (sugar.toDouble() * ratio).toString()
-        fiber = (fiber.toDouble() * ratio).toString()
-        totalCarbs = (totalCarbs.toDouble() * ratio).toString()
-        saturatedFat = (saturatedFat.toDouble() * ratio).toString()
-        totalFat = (totalFat.toDouble() * ratio).toString()
         protein = (protein.toDouble() * ratio).toString()
-        sodium = (sodium.toDouble() * ratio).toString()
-        potassium = (potassium.toDouble() * ratio).toString()
-        cholesterol = (cholesterol.toDouble() * ratio).toString()
+        lemak = (lemak.toDouble() * ratio).toString()
+        karbohidrat = (karbohidrat.toDouble() * ratio).toString()
+        serat = (serat.toDouble() * ratio).toString()
+        kalsium = (kalsium.toDouble() * ratio).toString()
+        besi = (besi.toDouble() * ratio).toString()
+        natrium = (natrium.toDouble() * ratio).toString()
         return this
     }
 }

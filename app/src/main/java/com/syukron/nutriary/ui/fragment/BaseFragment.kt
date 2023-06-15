@@ -20,7 +20,7 @@ abstract class BaseFragment<BindingType : ViewBinding>(
     private val hasOptionsMenu: Boolean = false,
     private val topLevelAndCanHaveUpButton: Boolean = false
 ) : Fragment() {
-    protected lateinit var binding: BindingType
+    protected open lateinit var binding: BindingType
     private var container: ViewGroup? = null
 
     protected val sharedViewModel: TrackerViewModel by activityViewModels()

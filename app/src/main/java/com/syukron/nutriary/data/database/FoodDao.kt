@@ -30,6 +30,6 @@ interface FoodDao {
     @Query("SELECT * FROM saved_foods_table WHERE list_type = :listType")
     fun getAllFoodsWithListType(listType: Int): LiveData<List<Food>>
 
-    @Query("SELECT TOTAL(calories) FROM saved_foods_table WHERE list_type != 4")
+    @Query("SELECT TOTAL(energi_kal) FROM saved_foods_table WHERE list_type != 4")
     fun getKcalSum(): LiveData<Double>
 }

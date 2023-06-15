@@ -6,6 +6,8 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatDelegate
 import com.syukron.nutriary.ui.onboarding.OnBoardingActivity
 import com.syukron.nutriary.util.ThemeProvider
@@ -17,6 +19,12 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
+        val imageView: ImageView = findViewById(R.id.iv_logo)
+
+        val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+
+        imageView.startAnimation(fadeInAnimation)
 
         val theme = ThemeProvider(this).getThemeFromPreferences()
         AppCompatDelegate.setDefaultNightMode(theme)
@@ -32,7 +40,6 @@ class SplashActivity : AppCompatActivity() {
                 startActivity(Intent(this, OnBoardingActivity::class.java))
                 finish()
             }, ANIMATION_TIME)
-
             // Set tanda bahwa aktivitas telah dijalankan
             val editor = sharedPreferences.edit()
             editor.putBoolean("isActivityExecuted", true)
