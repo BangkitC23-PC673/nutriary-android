@@ -8,4 +8,5 @@ Daily Nutrition and Calorie Diary Android App
 - BMR Calculator
 - Entering Calorie Intake by Searching the food and inputing the quantity of the food
 - Total Daily Nutrition (Calorie, Protein, Natrium, Sugar, Fats, etc)
+- Search food image
 ```
